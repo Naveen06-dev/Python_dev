@@ -4,17 +4,14 @@ class Whiteboard:
     def __init__(self, root):
         self.root = root
         self.root.title("Whiteboard")
-        
-        # Set up the canvas
+    
         self.canvas = tk.Canvas(root, bg="white", width=800, height=600)
         self.canvas.pack()
 
-        # Variables to track the mouse position
         self.old_x = None
         self.old_y = None
 
-        # Set up bindings for drawing
-        self.canvas.bind('<B1-Motion>', self.paint)  # Left mouse button to draw
+        self.canvas.bind('<B1-Motion>', self.paint)  
         self.canvas.bind('<ButtonRelease-1>', self.reset)
 
     def paint(self, event):
